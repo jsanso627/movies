@@ -12,7 +12,7 @@ import org.example.helloweb.dao.MovieDaoJdbcImpl;
 import org.example.helloweb.model.Movie;
 
 @WebServlet(name = "moviesServlet", value = "/movies")
-public class MoviesServlet {
+public class MoviesServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         MovieDao movieDao = new MovieDaoJdbcImpl();
         List<Movie> movies = movieDao.findAll();
